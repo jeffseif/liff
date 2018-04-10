@@ -8,7 +8,7 @@ function txt_to_rows {
         if grep -q '^[A-Z]\{2,\} ' <<< "${LINE}" ; then
             # Word and part o speech!
             IFS='^' read -r WORD PART <<< $(sed 's/^\([A-Z][A-Z ]\+\) (\(.\+\))/\1^\2\n/' <<< "${LINE}") ;
-            WORD=$(echo ${WORD}) ;
+            WORD=$(echo ${WORD} | tr '[:upper:]' '[:lower:]') ;
             PART=$(echo ${PART}) ;
         elif [ ! -z "${WORD}" ] && grep -q '.' <<< "${LINE}" ; then
             # Definition
@@ -20,11 +20,11 @@ function txt_to_rows {
 }
 
 function rows_to_dict {
-    echo '{' ;
+    echo "var LIFF = \`{" ;
     while read ROW ; do
         echo "${ROW}" ;
     done | sed '$ s/.$//' ;
-    echo '}' ;
+    echo "}\`;" ;
 }
 
 

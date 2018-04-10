@@ -1,10 +1,9 @@
+JS = dat/liff.js
 
-JSON = dat/liff.json
+all: $(JS)
 
-all: $(JSON)
-
-$(JSON): $(JSON:.json=.txt.gz)
-	zcat $< | $(JSON:.json=.sh) > $@
+$(JS): $(JS:.js=.txt.gz)
+	@zcat $< | $(JS:.js=.sh) > $@
 
 clean:
-	@rm -f $(JSON)
+	@rm -f $(JS)

@@ -1,0 +1,61 @@
+body {
+  font-family: monospace;
+  font-size: 300%;
+  padding: 0 0.5em;
+}
+
+div {
+  border-radius: 5px;
+  margin: 1em 0;
+  text-align: center;
+}
+
+div#header, div#footer {
+  background-color: lightslategray;
+  margin: 0;
+}
+
+div#liff {
+  display: table;
+  height: 3em;
+  table-layout: fixed;
+  width: 100%;
+}
+
+div#liff div {
+  background-color: lightgray;
+  border: gray solid 1px;
+  margin: 0;
+  padding: 0.5em;
+  text-align: left;
+  vertical-align: middle;
+}
+
+div#liff div#input input#lookup {
+  border: none;
+  font-family: monospace;
+  font-size: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+div#liff div#results {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+div#liff div#results div.result span.word {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+div#liff div#results div.result span.part {
+  color: gray;
+}
+
+div#liff div#results div.result span.defn {
+}

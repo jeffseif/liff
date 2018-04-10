@@ -10,4 +10,4 @@ dist/
 .eggs/
 *.egg-info
 venv/
-*.json
+dat/liff.js
