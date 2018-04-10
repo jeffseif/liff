@@ -28,7 +28,7 @@ function lookupMatches(lookup) {
 
             // Definition subset
             defn = LIFF[word][1];
-            if (defn.search(lookup) >= 0) matchSet.add(word);
+            if (defn.toLowerCase().search(lookup) >= 0) matchSet.add(word);
 
         };
     };
@@ -66,7 +66,7 @@ function matchesToHTML(matches) {
 
 function updateResults() {
 
-    lookup = document.getElementById('lookup').value;
+    lookup = document.getElementById('lookup').value.toLowerCase();
 
     matches = lookupMatches(lookup);
 
