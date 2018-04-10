@@ -7,7 +7,9 @@ function onLoad() {
     LIFF = JSON.parse(LIFF);
     WORDS = new Set(Object.keys(LIFF));
 
-    document.getElementById('lookup').select();
+    lookup = document.getElementById('lookup')
+    lookup.focus();
+    lookup.select();
 
     updateResults();
 };

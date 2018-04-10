@@ -2,8 +2,9 @@ JS = dat/liff.js
 
 all: $(JS)
 
-$(JS): $(JS:.js=.txt.gz)
-	@zcat $< | $(JS:.js=.sh) > $@
+.PHONY: $(JS)
+$(JS):
+	@zcat $(JS:.js=.txt.gz) | $(JS:.js=.sh) > $@
 
 clean:
 	@rm -f $(JS)
