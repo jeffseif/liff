@@ -6,11 +6,14 @@ LIFF_TXT = dat/liff.txt.gz
 LIFF_DICT = static/js/dict.js
 PORT = 5000
 
+
 all: $(LIFF_DICT) host
 
 .PHONY: $(LIFF_DICT)
 $(LIFF_DICT):
+	@md5sum $@
 	@zcat $(LIFF_TXT) | $(LIFF_TXT:.txt.gz=.sh) > $@
+	@md5sum $@
 
 .PHONY: host
 host: $(VENV) $(HOST)
