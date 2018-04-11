@@ -3,12 +3,20 @@
 var WORDS;
 var MAX_MATCHES = 5;
 
+function randomElementFromArray(array) {
+    var index = Math.floor(Math.random() * array.length);
+    return array[index];
+};
+
 function onLoad() {
     DICT = JSON.parse(DICT);
-    WORDS = new Set(Object.keys(DICT));
+
+    WORDS = Object.keys(DICT);
+    var word = randomElementFromArray(WORDS);
+    WORDS = new Set(WORDS);
 
     lookup = document.getElementById('lookup')
-    lookup.focus();
+    lookup.value = word;
     lookup.select();
 
     updateResults();
