@@ -240,7 +240,7 @@ var DICT = `{
 "hickling":["participial vb.","The practice of infuriating teatregoers by not only arriving late to a centre-row seat, but also loudly apologising to and patting each member of the audience in turn."],
 "hidcote bartram":["n.","To be caught in a hidcote bartram is to say a series of protracted and final goodbyes to a group of people, leave the house and then realise you've left your hat behind."],
 "high limerigg":["n.","The topmost tread of a staircase which disappears when you've climbing the stairs in the darkness."],
-"high offley":["n.","Gossnargh (q.v.) three weeks later."],
+"high offley":["n.","Goosnargh (q.v.) three weeks later."],
 "hobbs cross":["n.","The awkward leaping manoeuvre a girl has to go through in bed in order to make him sleep on the wet patch."],
 "hoddlesden":["n.","An 'injured' footballer's limb back into the game which draws applause but doesn't fool anybody."],
 "hodnet":["n.","The wooden safety platform supported by scaffolding round a building under construction from which the builders (at almost no personal risk) can drop pieces of cement on passers-by."],
