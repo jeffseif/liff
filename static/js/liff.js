@@ -4,8 +4,8 @@ var WORDS;
 var MAX_MATCHES = 5;
 
 function onLoad() {
-    LIFF = JSON.parse(LIFF);
-    WORDS = new Set(Object.keys(LIFF));
+    DICT = JSON.parse(DICT);
+    WORDS = new Set(Object.keys(DICT));
 
     lookup = document.getElementById('lookup')
     lookup.focus();
@@ -23,13 +23,13 @@ function lookupMatches(lookup) {
         // Direct match
         if (WORDS.has(lookup)) matchSet.add(lookup);
 
-        for (var word in LIFF) {
+        for (var word in DICT) {
 
             // Word subset
             if (word.search(lookup) >= 0) matchSet.add(word);
 
             // Definition subset
-            defn = LIFF[word][1];
+            defn = DICT[word][1];
             if (defn.toLowerCase().search(lookup) >= 0) matchSet.add(word);
 
         };
@@ -45,8 +45,8 @@ function matchesToHTML(matches) {
     var html = '';
     for (index in matches) {
         word = matches[index];
-        part = LIFF[word][0];
-        defn = LIFF[word][1];
+        part = DICT[word][0];
+        defn = DICT[word][1];
 
         html += (
                 "<div class='result'>"

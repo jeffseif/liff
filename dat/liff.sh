@@ -20,7 +20,7 @@ function txt_to_rows {
 }
 
 function rows_to_dict {
-    echo "var LIFF = \`{" ;
+    echo "var DICT = \`{" ;
     while read ROW ; do
         echo "${ROW}" ;
     done | sed '$ s/.$//' ;

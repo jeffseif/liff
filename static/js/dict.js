@@ -1,4 +1,4 @@
-var LIFF = `{
+var DICT = `{
 "aasleagh":["n.","A liqueur made only for drinking at the end of a revoltingly long bottle party when all the drinkable drink has been drunk."],
 "aberbeeg":["vb.","Of amateur actors, to adopt a Mexican accent when called upon to play any variety of foreigner (except Pakistanis - from whom a Welsh accent is considered sufficient)."],
 "abercrave":["vb.","To strongly desire to swing from the pole on the rear footplate of a bus."],
