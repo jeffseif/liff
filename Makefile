@@ -1,28 +1,24 @@
 PYTHON = $(shell which python3)
 VENV = venv/
 
-HOST = host.py
-LIFF_TXT = dat/liff.txt.gz
+HOST = 0.0.0.0
 LIFF_DICT = static/js/dict.js
+LIFF_TXT = dat/liff.txt.gz
 PORT = 5000
+WSGI = wsgi.py
 
+all: wsgi
 
-all: $(LIFF_DICT) host
+.PHONY: wsgi
+wsgi: $(VENV) $(LIFF_DICT) $(WSGI)
+	@echo "Hosted @ http://$(shell hostname -I | xargs):$(PORT)/"
+	@FLASK_ENV=development FLASK_RUN_HOST=$(HOST) FLASK_RUN_PORT=$(PORT) $</bin/flask run
 
 .PHONY: $(LIFF_DICT)
 $(LIFF_DICT):
 	@md5sum $@
 	@zcat $(LIFF_TXT) | $(LIFF_TXT:.txt.gz=.sh) > $@
 	@md5sum $@
-
-.PHONY: host
-host: $(VENV) $(HOST)
-	@echo "Hosted @ http://$(shell hostname -I | xargs):$(PORT)/"
-	@FLASK_APP=$(HOST) $</bin/flask \
-		run \
-			--host '0.0.0.0' \
-			--port $(PORT) \
-			--reload
 
 $(VENV): requirements.txt
 	@virtualenv \
