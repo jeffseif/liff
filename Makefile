@@ -15,7 +15,7 @@ wsgi: $(VENV) $(LIFF_DICT) $(WSGI)
 	@FLASK_ENV=development FLASK_RUN_HOST=$(HOST) FLASK_RUN_PORT=$(PORT) $</bin/flask run
 
 .PHONY: $(LIFF_DICT)
-$(LIFF_DICT):
+$(LIFF_DICT): $(LIFF_TXT)
 	@md5sum $@
 	@zcat $(LIFF_TXT) | $(LIFF_TXT:.txt.gz=.sh) > $@
 	@md5sum $@

@@ -5,9 +5,9 @@
 function txt_to_rows {
     while read LINE ; do
 
-        if grep -q '^[A-Z]\{2,\} ' <<< "${LINE}" ; then
+        if grep -q $'^[A-Z \'\\-]\\{2,\\} ' <<< "${LINE}" ; then
             # Word and part o speech!
-            IFS='^' read -r WORD PART <<< $(sed 's/^\([A-Z][A-Z ]\+\) (\(.\+\))/\1^\2\n/' <<< "${LINE}") ;
+            IFS='^' read -r WORD PART <<< $(sed $'s/^\\([A-Z][A-Z \'\\-]\\+\\) (\\(.\\+\\))/\\1^\\2\\n/' <<< "${LINE}") ;
             WORD=$(echo ${WORD} | tr '[:upper:]' '[:lower:]') ;
             PART=$(echo ${PART}) ;
         elif [ ! -z "${WORD}" ] && grep -q '.' <<< "${LINE}" ; then
