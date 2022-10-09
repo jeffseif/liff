@@ -1,12 +1,5 @@
 *.pyc
 *.swp
-*~
-.cache/
-.coverage
-.tox/
 __pycache__/
-build/
-dist/
-.eggs/
-*.egg-info
-venv/
+venv
+.already.running.lock
